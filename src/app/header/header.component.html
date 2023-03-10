@@ -1,0 +1,11 @@
+<mat-toolbar color="accent">
+    <button mat-button routerLink="/">ClientesFrontend</button>
+    <button mat-button routerLink="/clientes">Clientes</button>
+    <button mat-button *ngIf="auth.isAutenticado" routerLink="/crear-cliente">Nuevo Cliente</button>
+
+    <span style="flex: 1 1 auto;"></span>
+    <button mat-button *ngIf="auth.isAutenticado">Bienvenido {{auth.getUserName}}</button>
+    <button mat-button *ngIf="auth.isAutenticado" (click)="auth.logout()">Cerrar Sesión</button>
+    <button mat-button *ngIf="!auth.isAutenticado" routerLink="/register">Registrarse</button>
+    <button mat-button *ngIf="!auth.isAutenticado" routerLink="/login">Iniciar Sesión</button>
+</mat-toolbar>
